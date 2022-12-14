@@ -789,28 +789,28 @@ for (i in unique(real_data$id)) {
 d <- real_data %>% subset(visit == 1) %>% 
   mutate(
     EstimatedIntercept = ifelse(Diagnosis == 'A',
-                                    EstimatedIntercept + 3.96,
-                                    EstimatedIntercept + 3.87),
+                                    EstimatedIntercept + 0.44,
+                                    EstimatedIntercept + 0.49),
     EstimatedIntercept_low = ifelse(Diagnosis == 'A',
-                                   EstimatedIntercept_low + 3.96,
-                                   EstimatedIntercept_low + 3.87),
+                                   EstimatedIntercept_low + 0.44,
+                                   EstimatedIntercept_low + 0.49),
     EstimatedIntercept_high = ifelse(Diagnosis == 'A',
-                                     EstimatedIntercept_high + 3.96,
-                                     EstimatedIntercept_high + 3.87)
+                                     EstimatedIntercept_high + 0.44,
+                                     EstimatedIntercept_high + 0.49)
 )
 
 
 d <- real_data %>% subset(visit == 1) %>% 
   mutate(
     EstimatedSlope = ifelse(Diagnosis == 'A',
-                                    EstimatedSlope + 3.96,
-                                    EstimatedSlope + 3.87),
+                                    EstimatedSlope - 0.01,
+                                    EstimatedSlope + 0.07),
     EstimatedSlope_low = ifelse(Diagnosis == 'A',
-                                   EstimatedSlope_low + 3.96,
-                                   EstimatedSlope_low + 3.87),
+                                   EstimatedSlope_low - 0.01,
+                                   EstimatedSlope_low + 0.07),
     EstimatedSlope_high = ifelse(Diagnosis == 'A',
-                                     EstimatedSlope_high + 3.96,
-                                     EstimatedSlope_high + 3.87)
+                                     EstimatedSlope_high - 0.01,
+                                     EstimatedSlope_high + 0.07)
 )
     
 estimates_intercept <- ggplot(d) +
